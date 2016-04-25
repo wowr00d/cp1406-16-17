@@ -1,17 +1,40 @@
 <html>
 <head>
 <title>Home - Barrier Reef Orchestra</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Cinzel|Lora' rel='stylesheet' type='text/css'>
 <link href='index.css' rel="stylesheet" type="text/css">
-    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+<script> 
+$(document).ready(function(){
+    $("#mm-button").click(function(){
+        $("#mobile-menu").animate({left: '0px'});
+    });
+    $("#mm-exit").click(function(){
+        $("#mobile-menu").animate({left: '-100%'});
+    });
+});
+</script> 
+    <div id="mobile-menu">
+        <p>MENU</p><div id="mm-exit"></div>
+        <hr>
+        <a href="#">Buy a ticket</a>
+        <a href="#">Upcoming</a>
+        <a href="#">Conductors</a>
+        <a href="#">People</a>
+        <a href="#">Gallery</a>
+        <a href="#">Music</a>
+        <a href="#">Support Us</a>
+    </div>
+    
+    
     <div id="spotlight-frame">
         <nav>
             <div id="nav-inner">
-                <img alt="LOGO" src="logo.png">
-
+                <img alt="LOGO" src="images/logo.png">
                 <a href="#">Buy a ticket</a>
                 <a href="#">Upcoming</a>
                 <a href="#">Conductors</a>
@@ -19,6 +42,8 @@
                 <a href="#">Gallery</a>
                 <a href="#">Music</a>
                 <a href="#">Support Us</a>
+                
+                <div id="mm-button"></div>
             </div>
         </nav>
         
@@ -47,9 +72,17 @@
         </div>
         
         <div id="facebook-feed">
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnqorchestra&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
         </div>
     </div>
+            
+    <div id="footer">
+        <div id="footer-inner">
+            <p>Copyright - Barrier Reef Orchestra - 2016</p>
+            <a href="#top"><button>^</button></a>
+        </div>        
+    </div>
+            
 </body>
 
 </html>
