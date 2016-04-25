@@ -1,16 +1,79 @@
 html, body {
     padding: 0px;
     margin: 0px;
-    background: linear-gradient(rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%), url("background-body.jpg");
+    background: linear-gradient(rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%), url("images/background-body.jpg");
     background-size: cover;
 }
 #spotlight-frame {
     width: 100%;
     height: 100vh;
     background-color: green;
-    background: linear-gradient(-45deg, rgba(219,157,0,0.3) 0%,rgba(0,146,214,0.3) 100%), url("site-bg.jpg");
+    background: linear-gradient(-45deg, rgba(219,157,0,0.3) 0%,rgba(0,146,214,0.3) 100%), url("images/site-bg.jpg");
     background-size: cover;
     background-position: center;
+}
+#mobile-menu {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,15, 0.8);
+    z-index: 9;
+    position: absolute;
+    padding-top: 10px;
+    left: -100%;
+}
+#mobile-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    width: 90%;
+    margin-left: 15px;
+    border-bottom: 1px solid #6b6b6b;
+}
+#mobile-menu p {
+    font-size: 35px;
+    color: #a0a0a0;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0px;
+    margin-left: 15px;
+    font-weight: 300;
+    display: inline;
+    padding: 0px;
+}
+#mobile-menu hr {
+    background-color: #6b6b6b;
+    border: none;
+    height: 1px;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+#mm-exit {
+    width: 30px;
+    height: 30px;
+    background-image: url(images/mm-exit.png);
+    background-size: cover;
+    float: right;
+    display: inline;
+    margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#mm-button {
+    width: 50px;
+    height: 50px;
+    background-image: url(images/mm-img.png);
+    border: 1px orange solid;
+    border-radius: 4px;
+    background-size: cover;
+    display: none;
+    float: left;
+    position: absolute;
+    left: 8px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 nav {
     width: 100%;
@@ -98,10 +161,13 @@ nav {
 }
 #left-column {
     width: 630px;
-    height: 650px;
+    height: auto;
     padding: 15px;
     float: left;
     background-color: white;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.55);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.55);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.55);
 }
 #left-column h1{
     font-family: 'Open Sans', sans-serif;
@@ -145,5 +211,110 @@ nav {
     width: 340px;
     height: auto;
     float: right;
-    background-color: blue;  
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.55);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.55);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.55);
+}
+#footer {
+    width: 100%;
+    height: 50px;
+    background-color: #141414;
+}
+#footer-inner {
+    width: 1024px;
+    height: auto;
+    line-height: 50px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+#footer-inner p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    color: #a8a8a8;
+    padding: 0px;
+    display: inline;
+}
+#footer-inner button {
+    font-size: 26px;
+    width: 35px;
+    float: right;
+    font-weight: 700;
+    margin-top: 8px;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FFA800;
+    transition: 0.2s;
+}
+#footer-inner button:hover {
+    background-color: #00aaff;
+    color: white;
+}
+
+
+@media only screen and (max-width: 1050px){
+    nav {
+        height: 55px;
+        padding-top: 5px;
+    }
+    #mm-button {
+        display: inline-block;
+    }
+    #nav-inner {
+        width: 100%;
+        text-align: center;
+    }
+    #nav-inner img {
+        height: 40px;
+        width: 170px;
+        float: none;
+        padding-top: 5px;
+    }
+    #spotlight-inner {
+        width: 80%;
+    }
+    #spotlight-inner h1 {
+        font-size: 48px;
+    }
+    #spotlight-inner h2 {
+        font-size: 20px;
+    }
+    #nav-inner a {
+        display: none;
+    }
+    #left-column {
+        width: 90%;
+        float: inherit;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+    }
+    #facebook-feed {
+        display: none;
+    }
+    #content-wrapper {
+        width: 100%;
+    }
+    #footer-inner {
+        width: 90%;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    #footer{
+        display: none;
+    }
+        #spotlight-inner h1 {
+        font-size: 38px;
+    }
+    #spotlight-inner h2 {
+        font-size: 18px;
+    }
+    #spotlight-inner button {
+        font-size: 12px;
+    }
 }
