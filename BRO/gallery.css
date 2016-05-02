@@ -109,6 +109,9 @@ nav {
     border-radius: 3px;
     color: white;
 }
+#nav-inner a.logo:hover{
+    background-color:#FFFFFF;
+}
 #spotlight-inner {
     width: 1024px;
     height: 140px;
