@@ -1,6 +1,7 @@
+
 <html>
 <head>
-<title>Support Us - Barrier Reef Orchestra</title>
+<title>Benefactry Form - Barrier Reef Orchestra</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Cinzel|Lora' rel='stylesheet' type='text/css'>
 <link href='gallery.css' rel="stylesheet" type="text/css">
@@ -41,25 +42,27 @@ $(document).ready(function(){
     <div id="mobile-menu">
         <p>MENU</p><div id="mm-exit"></div>
         <hr>
-        <a class="logo" href="index.html"><img alt="LOGO" src="images/logo.png"></a>
-        <a href="https://whatson.townsville.qld.gov.au/categories/ticketshop">Buy a ticket</a>
-        <a href="index.html">Home</a>
-        <a href="people.html">People</a>
+        <a href="#">Buy a ticket</a>
+        <a href="#">Upcoming</a>
+        <a href="#">Conductors</a>
+        <a href="#">People</a>
         <a href="gallery.html">Gallery</a>
-        <a href="music.html">Music</a>
+        <a href="Music.html">Music</a>
+        <a href="form.html">Support Us</a>
     </div>
     
     
     <div id="spotlight-frame">
         <nav>
             <div id="nav-inner">
-                <a class="logo" href="index.html"><img alt="LOGO" src="images/logo.png"></a>
-                <a href="https://whatson.townsville.qld.gov.au/categories/ticketshop">Buy a ticket</a>
-                <a href="index.html">Home</a>
-                <a href="people.html">People</a>
+               <a class="logo" href="index.html"><img alt="LOGO" src="images/logo.png"></a>
+                <a href="#">Buy a ticket</a>
+                <a href="#">Upcoming</a>
+                <a href="#">Conductors</a>
+                <a href="#">People</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="music.html">Music</a>
-                <a href="index.html">Home</a>
+                <a href="Music.html">Music</a>
+                <a href="form.html">Support Us</a>
                 
                 <div id="mm-button"></div>
             </div>
@@ -78,7 +81,7 @@ $(document).ready(function(){
             <h2></h2><h3>Date posted: 2016</h3>
 
         
-            <form name = "BenefactorForm" action = "" onsubmit = "return checkForm();" method = "post" id="mainForm">              
+            <form name = "BenefactorForm" action = "" onsubmit="" method = "post" id="mainForm">              
                 <label for = "Donation">I wish to become a Barrier Reef Orchestra Benefactor and contribute*:</label>
                 <input type = "number" min = "100" max = "99999999" name = "Donation" id = "Donation" placeholder="$" onfocusout="donationEntered(this);" required><p id = "DonationMsg"></p>
 
@@ -99,29 +102,29 @@ $(document).ready(function(){
 
                 <br>
 
-                <label for = "name">Name*: <img src="images/cross.png" alt="X" name="nameTick" width="12" height="12" id="nameTick"></label>
+                <label for = "name">Name*: <img src="images/cross.png" alt="X" name="nameTick" width="12" height="12" id="nameTick"><span id = "nameErrMsg"></span></label>
                 <input type="text" name="name" id="name" placeholder="Name" autofocus onKeyUp="nameEntered(this);" required>
 
-                <label for = "Address">Mailing Address*: <img src="images/cross.png" alt="X" name="addressTick" width="12" height="12" id="addressTick"></label><span id="addressErrMsg"></span>
+                <label for = "Address">Mailing Address*: <img src="images/cross.png" alt="X" name="addressTick" width="12" height="12" id="addressTick"><span id="addressErrMsg"></span></label>
                 <input type = "text" name = "Address" id="Address" placeholder="Mailing Address" onfocusout="addressEntered(this);" required>
                 
                 <br>
 
-                <label for = "Email">Email Address:</label> 
+                <label for = "Email">Email Address: <img src="images/cross.png" alt="X" name="emailTick" width="12" height="12" id="emailTick"> <span id="emailErrMsg"></span></label> 
                 <input type = "text" name = "Email" id = "Email" placeholder="Example@gmail.com" onfocusout="emailEntered(this);" required>
                 
-                <label for = "Phone">Phone: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"></label><span id="phoneErrMsg"></span>
-                <input type = "text" name = "Phone" id = "Phone" placeholder="0412345678" onfocusout="phoneEntered(this);" required>
+                <label for = "Phone">Phone: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"></span></label>
+                <input type = "text" name = "Phone" id = "Phone" maxlength="10" placeholder="0412345678" onfocusout="phoneEntered(this);" required>
                 
-                <label for = "Mobile"> Mobile:</label>
-                <input type = "text" name = "Mobile" id = "Mobile" placeholder="0412345678" onfocusout="phoneEntered(this);" required>
+                <label for = "Mobile"> Mobile: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"></span></label>
+                <input type = "text" name = "Mobile" id = "Mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);" required>
 
                 <br>
 
                 <a href="benefactorform/north-queensland-orchestra-benefactor-form.pdf" target="_blank">Hard Copy</a>
                 
                 <input type = "reset" value = "reset">
-                <input type = "submit" value = "submit">
+                <input type = "submit" value = "submit" id="submit">
                 
 
             </form>
@@ -134,6 +137,7 @@ $(document).ready(function(){
         </div>
     </div>
             
+          
     <div id="footer">
         <div id="footer-inner">
             <p>Copyright - Barrier Reef Orchestra - 2016</p>
@@ -142,5 +146,6 @@ $(document).ready(function(){
     </div>
             
 </body>
+
 
 </html>
