@@ -103,29 +103,28 @@ $(document).ready(function(){
                 <br>
 
                 <label for = "name">Name*: <img src="images/cross.png" alt="X" name="nameTick" width="12" height="12" id="nameTick"><span id = "nameErrMsg"></span></label>
-                <input type="text" name="name" id="name" placeholder="Name" autofocus onKeyUp="nameEntered(this);" required>
+                <input type="text" name="name" id="name" placeholder="Name" autofocus onKeyUp="nameEntered(this);" onfocusout="continueornot();" required>
 
                 <label for = "Address">Mailing Address*: <img src="images/cross.png" alt="X" name="addressTick" width="12" height="12" id="addressTick"><span id="addressErrMsg"></span></label>
-                <input type = "text" name = "Address" id="Address" placeholder="Mailing Address" onfocusout="addressEntered(this);" required>
+                <input type = "text" name = "Address" id="Address" placeholder="Mailing Address" onfocusout="addressEntered(this);" onfocusout="continueornot();" required>
                 
                 <br>
 
                 <label for = "Email">Email Address: <img src="images/cross.png" alt="X" name="emailTick" width="12" height="12" id="emailTick"> <span id="emailErrMsg"></span></label> 
-                <input type = "text" name = "Email" id = "Email" placeholder="Example@gmail.com" onfocusout="emailEntered(this);" required>
+                <input type = "text" name = "Email" id = "Email" placeholder="Example@gmail.com" onfocusout="emailEntered(this);" onfocusout="continueornot();" required>
                 
                 <label for = "Phone">Phone: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"></span></label>
-                <input type = "text" name = "Phone" id = "Phone" maxlength="10" placeholder="0412345678" onfocusout="phoneEntered(this);" required>
+                <input type = "text" name = "Phone" id = "Phone" maxlength="10" placeholder="0412345678" onfocusout="phoneEntered(this);" onfocusout="continueornot();" required>
                 
-                <label for = "Mobile"> Mobile: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"></span></label>
-                <input type = "text" name = "Mobile" id = "Mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);" required>
+                <label for = "Mobile"> Mobile: <img src="images/cross.png" alt="X" name="mobileTick" width="12" height="12" id="mobileTick"><span id="mobileErrMsg"></span></label>
+                <input type = "text" name = "Mobile" id = "Mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);" onfocusout="continueornot();" required>
 
                 <br>
 
                 <a href="benefactorform/north-queensland-orchestra-benefactor-form.pdf" target="_blank">Hard Copy</a>
                 
-                <input type = "reset" value = "reset">
-                <input type = "submit" value = "submit" id="submit">
-                
+                <input type = "reset" value = "reset" onreset="clearForm();">
+                <input type = "submit" value = "submit" id="submit" disabled="true">
 
             </form>
 

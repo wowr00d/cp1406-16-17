@@ -1,41 +1,22 @@
 /*make a progress bar for completion*/
-/*disable option for things which are relevant*/
+
 
 
 function nameEntered(name) {
-    if (name.value != "") {
+  var regexName = /^[a-zA-Z]+$/;
+   if(name.value.match(regexName)){
+        document.memberForm.nameTick.src = "images/cross.png";
+        document.memberForm.nameTick.alt = "cross";
+        return false
+    }
+    else if (name.value != "") {
         document.memberForm.nameTick.src = "images/tick.png";
         document.memberForm.nameTick.alt = "tick";
         document.getElementById("nameErrMsg").innerHTML = "Perfect";
-        namex = true;
         return true
     }
-    else {
-        document.memberForm.nameTick.src = "images/cross.png";
-        document.memberForm.nameTick.alt = "cross";
-        document.getElementById("submit").disabled = true;
-        namex = false;
-        return false
-    }
+   
 }
-
-function donationEntered(Donation) {
-    var inpObj = document.getElementById("Donation");
-    if (Donation.value == "" ||  Donation.value == null){
-        document.getElementById("DonationMsg").innerHTML = "Please enter your donation amount"
-        donationx = false;
-        return false
-    }
-    else if (inpObj.checkValidity() == false) {
-        document.getElementById("DonationMsg").innerHTML = inpObj.validationMessage;
-        donationx = false;
-        return false
-    } else {
-        document.getElementById("DonationMsg").innerHTML = "Valid Donation";
-        donationx = true;
-        return false
-    } 
-} 
 
 function emailEntered(Email) {
     var x = document.forms["memberForm"]["Email"].value;
@@ -45,14 +26,12 @@ function emailEntered(Email) {
         document.memberForm.emailTick.src = "images/cross.png";
         document.memberForm.emailTick.alt = "cross";
         document.getElementById("emailErrMsg") = "Not a valid e-mail address"
-        emailx = false;
         return false
     }
     else{
         document.memberForm.emailTick.src = "images/tick.png";
         document.memberForm.emailTick.alt = "tick";
         document.getElementById("emailErrMsg") = "Perfect"
-        emailx = true;
         return true
     }
 }
@@ -63,14 +42,12 @@ function phoneEntered(Phone) {
       document.memberForm.phoneTick.src = "images/tick.png";
       document.memberForm.phoneTick.alt = "tick";
       document.getElementById("phoneErrMsg").innerHTML = "Perfect";
-      phonex= true;
       return true
   }  
   else{  
       document.memberForm.phoneTick.src = "images/cross.png";
       document.memberForm.phoneTick.alt = "cross";
-      document.getElementById("phoneErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters";
-     phonex= false;  
+      document.getElementById("phoneErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters"; 
      return false
   }  
 } 
@@ -81,14 +58,12 @@ function mobileEntered(Mobile) {
       document.memberForm.mobileTick.src = "images/tick.png";
       document.memberForm.mobileTick.alt = "tick";
       document.getElementById("mobileErrMsg").innerHTML = "Perfect";
-      mobilex= true;
       return true
   }  
   else{  
       document.memberForm.mobileTick.src = "images/cross.png";
       document.memberForm.mobileTick.alt = "cross";
-      document.getElementById("mobileErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters";
-     mobilex= false;  
+      document.getElementById("mobileErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters"; 
      return false
   }  
 }   
@@ -109,14 +84,12 @@ function addressEntered(Address){
     document.memberForm. addressTick.src = "images/tick.png";
     document.memberForm.addressTick.alt = "tick";
     document.getElementById("addressErrMsg").innerHTML = "Perfect";
-    addressx= true;
     return true
   }
   else{
     document.memberForm. addressCross.src = "images/cross.png";
     document.memberForm.addressCross.alt = "cross";
     document.getElementById("addressErrMsg").innerHTML = "Please Enter a valid address";
-    addressx= false;
     return false
   }
 }
@@ -129,65 +102,6 @@ function anon(anonymous) {
 function anonUnDisable(anonymous) {
   document.getElementById("recognition").disabled = false;
 }
-
-/*function continueornot(){
-  if namex ==true &&  donationx = true   emailx = true     phonex= true  mobilex= true addressx= true{
-    document.getElementById("submit").disabled = false;
-  }
-  else{
-    document.getElementById("submit").disabled= true;
-  }
-}*/
-
-function nameEntered(name) {
-    if (name.value != "") {
-        document.memberForm.nameTick.src = "images/tick.png";
-        document.memberForm.nameTick.alt = "tick";
-    }
-    else {
-        document.memberForm.nameTick.src = "images/cross.png";
-        document.memberForm.nameTick.alt = "cross";
-    }
-}
-
-function donationEntered(Donation) {
-    var inpObj = document.getElementById("Donation");
-    if (Donation.value == "" ||  Donation.value == null){
-        document.getElementById("DonationMsg").innerHTML = "Please enter your donation amount"
-    }
-    else if (inpObj.checkValidity() == false) {
-        document.getElementById("DonationMsg").innerHTML = inpObj.validationMessage;
-    } else {
-        document.getElementById("DonationMsg").innerHTML = "Valid Donation";
-    } 
-} 
-
-function emailEntered(Email) {
-    var x = document.forms["memberForm"]["Email"].value;
-    var atpos = x.indexOf("@");
-    var dotpos = x.lastIndexOf(".");
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        alert("Not a valid e-mail address");
-        return false;
-    }
-}
-
-function phoneEntered(Phone) {  
-  var phoneno = /^\d{10}$/;
-  if(Phone.value.match(phoneno)){  
-      document.memberForm.phoneTick.src = "images/tick.png";
-      document.memberForm.phoneTick.alt = "tick";
-      document.getElementById("phoneErrMsg").innerHTML = "Perfect";
-      return true;
-  }  
-  else{  
-      document.memberForm.phoneTick.src = "images/cross.png";
-      document.memberForm.phoneTick.alt = "cross";
-      document.getElementById("phoneErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters";
-     return false;  
-  }  
-}  
-
 
 /*
 This isn't really right
@@ -243,4 +157,61 @@ function disablePlayReg(){
   document.getElementById("qualification").disabled=true;
   document.getElementById("experience").disabled=true;
 
+}
+function instrumentEntered(instrument) {
+    if (instrument.value != "") {
+        document.memberForm.instrumentTick.src = "images/tick.png";
+        document.memberForm.instrumentTick.alt = "tick";
+        document.getElementById("instrumentErrMsg").innerHTML = "Perfect";
+        return true
+    }
+    else{
+        document.memberForm.instrumentTick.src = "images/cross.png";
+        document.memberForm.instrumentTick.alt = "cross";
+        return false
+    }
+   
+}
+function qualificationEntered(qualification) {
+   if (qualification.value != "") {
+        document.memberForm.qualificationTick.src = "images/tick.png";
+        document.memberForm.qualificationTick.alt = "tick";
+        document.getElementById("qualificationErrMsg").innerHTML = "Perfect";
+        return true
+    }
+    else{
+        document.memberForm.qualificationTick.src = "images/cross.png";
+        document.memberForm.qualificationTick.alt = "cross";
+        return false
+    }
+   
+}
+function experienceEntered(experience) {
+   if (experience.value != "") {
+        document.memberForm.experienceTick.src = "images/tick.png";
+        document.memberForm.experienceTick.alt = "tick";
+        document.getElementById("experienceErrMsg").innerHTML = "Perfect";
+        return true
+    }
+    else{
+        document.memberForm.experienceTick.src = "images/cross.png";
+        document.memberForm.experienceTick.alt = "cross";
+        return false
+    }
+   
+}
+//i need to add a function to enable submit button when data is valid
+
+function clearForm() {
+document.getElementById("nameErrMsg").innerHTML = "";
+document.memberForm.nameTick.src = "images/cross.png";
+document.getElementById("DonationMsg").innerHTML = "";
+document.memberForm.emailTick.src = "images/cross.png";
+document.getElementById("emailErrMsg") = ""
+document.memberForm.phoneTick.src = "images/cross.png";
+document.getElementById("phoneErrMsg").innerHTML = "";
+document.memberForm.mobileTick.src = "images/cross.png";
+document.getElementById("mobileErrMsg").innerHTML = ""; 
+document.memberForm. addressCross.src = "images/cross.png";
+document.getElementById("addressErrMsg").innerHTML = ""; 
 }

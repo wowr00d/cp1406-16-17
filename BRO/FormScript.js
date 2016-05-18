@@ -1,18 +1,23 @@
+namex= "no";
+donationx = "no"; 
+phonex= "no"; 
+mobilex= "no"; 
+addressx= "no";
 
 function nameEntered(name) {
     if (name.value != "") {
         document.BenefactorForm.nameTick.src = "images/tick.png";
         document.BenefactorForm.nameTick.alt = "tick";
         document.getElementById("nameErrMsg").innerHTML = "Perfect";
-        namex = true;
-        return true
+        namex = "yes";
+        return true;
     }
     else {
         document.BenefactorForm.nameTick.src = "images/cross.png";
         document.BenefactorForm.nameTick.alt = "cross";
         document.getElementById("submit").disabled = true;
-        namex = false;
-        return false
+        namex = "no";
+        return false;
     }
 }
 
@@ -20,17 +25,17 @@ function donationEntered(Donation) {
     var inpObj = document.getElementById("Donation");
     if (Donation.value == "" ||  Donation.value == null){
         document.getElementById("DonationMsg").innerHTML = "Please enter your donation amount"
-        donationx = false;
-        return false
+        donationx = "no";
+        return false;
     }
     else if (inpObj.checkValidity() == false) {
         document.getElementById("DonationMsg").innerHTML = inpObj.validationMessage;
-        donationx = false;
-        return false
+        donationx = "no";
+        return false;
     } else {
         document.getElementById("DonationMsg").innerHTML = "Valid Donation";
-        donationx = true;
-        return false
+        donationx = "yes";
+        return true;
     } 
 } 
 
@@ -42,15 +47,15 @@ function emailEntered(Email) {
         document.BenefactorForm.emailTick.src = "images/cross.png";
         document.BenefactorForm.emailTick.alt = "cross";
         document.getElementById("emailErrMsg") = "Not a valid e-mail address"
-        emailx = false;
-        return false
+        emailx = "no";
+        return false;
     }
     else{
         document.BenefactorForm.emailTick.src = "images/tick.png";
         document.BenefactorForm.emailTick.alt = "tick";
         document.getElementById("emailErrMsg") = "Perfect"
-        emailx = true;
-        return true
+        emailx = "yes";
+        return true;
     }
 }
 
@@ -60,15 +65,15 @@ function phoneEntered(Phone) {
       document.BenefactorForm.phoneTick.src = "images/tick.png";
       document.BenefactorForm.phoneTick.alt = "tick";
       document.getElementById("phoneErrMsg").innerHTML = "Perfect";
-      phonex= true;
-      return true
+      phonex= "yes";
+      return true;
   }  
   else{  
       document.BenefactorForm.phoneTick.src = "images/cross.png";
       document.BenefactorForm.phoneTick.alt = "cross";
       document.getElementById("phoneErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters";
-     phonex= false;  
-     return false
+     phonex= "no";  
+     return false;
   }  
 } 
 
@@ -78,15 +83,15 @@ function mobileEntered(Mobile) {
       document.BenefactorForm.mobileTick.src = "images/tick.png";
       document.BenefactorForm.mobileTick.alt = "tick";
       document.getElementById("mobileErrMsg").innerHTML = "Perfect";
-      mobilex= true;
-      return true
+      mobilex= "yes";
+      return true;
   }  
   else{  
       document.BenefactorForm.mobileTick.src = "images/cross.png";
       document.BenefactorForm.mobileTick.alt = "cross";
       document.getElementById("mobileErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters";
-     mobilex= false;  
-     return false
+     mobilex= "no";  
+     return false;
   }  
 }   
 
@@ -103,18 +108,18 @@ function addressEntered(Address){
 
 function addressEntered(Address){
   if(Address.value != ""){
-    document.BenefactorForm. addressTick.src = "images/tick.png";
+    document.BenefactorForm.addressTick.src = "images/tick.png";
     document.BenefactorForm.addressTick.alt = "tick";
     document.getElementById("addressErrMsg").innerHTML = "Perfect";
-    addressx= true;
-    return true
+    addressx= "yes";
+    return true;
   }
   else{
-    document.BenefactorForm. addressCross.src = "images/cross.png";
+    document.BenefactorForm.addressCross.src = "images/cross.png";
     document.BenefactorForm.addressCross.alt = "cross";
     document.getElementById("addressErrMsg").innerHTML = "Please Enter a valid address";
-    addressx= false;
-    return false
+    addressx= "no";
+    return false;
   }
 }
 
@@ -127,14 +132,6 @@ function anonUnDisable(anonymous) {
   document.getElementById("recognition").disabled = false;
 }
 
-/*function continueornot(){
-  if namex ==true &&  donationx = true   emailx = true     phonex= true  mobilex= true addressx= true{
-    document.getElementById("submit").disabled = false;
-  }
-  else{
-    document.getElementById("submit").disabled= true;
-  }
-}*/
 
 function nameEntered(name) {
     if (name.value != "") {
@@ -185,6 +182,22 @@ function phoneEntered(Phone) {
   }  
 }  
 
+function mobileEntered(Mobile) {  
+  var mobileno = /^\d{10}$/;
+  if(Mobile.value.match(phoneno)){  
+      document.BenefactorForm.mobileTick.src = "images/tick.png";
+      document.BenefactorForm.mobileTick.alt = "tick";
+      document.getElementById("mobileErrMsg").innerHTML = "Perfect";
+      return true
+  }  
+  else{  
+      document.BenefactorForm.mobileTick.src = "images/cross.png";
+      document.BenefactorForm.mobileTick.alt = "cross";
+      document.getElementById("mobileErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters"; 
+     return false
+  }  
+}   
+
 
 /*
 This isn't really right
@@ -198,7 +211,7 @@ function addressEntered(Address){
 
 function addressEntered(Address){
   if(Address.value != ""){
-    document.BenefactorForm. addressTick.src = "images/tick.png";
+    document.BenefactorForm.addressTick.src = "images/tick.png";
     document.BenefactorForm.addressTick.alt = "tick";
     document.getElementById("addressErrMsg").innerHTML = "Perfect";
   }
@@ -218,3 +231,31 @@ function anonUnDisable(anonymous) {
   document.getElementById("recognition").disabled = false;
 }
 
+/*function continueornot(){
+  if namex =="yes" &&  donationx = "yes" && phonex= "yes" && mobilex= "yes" && addressx= "yes"{
+    document.getElementById("submit").disabled = false;
+  }
+  else{
+    document.getElementById("submit").disabled= true;
+  }
+} *///*****************for some reason this function and clearForm are not running properly******************
+
+function clearForm() {
+  document.getElementById("nameErrMsg").innerHTML = "";
+  document.BenefactorForm.nameTick.src = "images/cross.png";
+  document.getElementById("DonationMsg").innerHTML = ""
+  document.BenefactorForm.emailTick.src = "images/cross.png";
+  document.getElementById("emailErrMsg") = "Not a valid e-mail address"
+  document.BenefactorForm.phoneTick.src = "images/cross.png";
+  document.getElementById("phoneErrMsg").innerHTML = "";
+  document.BenefactorForm.mobileTick.src = "images/cross.png";
+  document.getElementById("mobileErrMsg").innerHTML = "";
+  document.BenefactorForm.addressCross.src = "images/cross.png";
+  document.getElementById("addressErrMsg").innerHTML = "";
+  document.getElementById("recognition").disabled = false;
+  namex= "no";
+  donationx = "no"; 
+  phonex= "no"; 
+  mobilex= "no"; 
+  addressx= "no";
+}

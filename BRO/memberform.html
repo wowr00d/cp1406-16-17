@@ -81,7 +81,7 @@ $(document).ready(function(){
             <h2></h2><h3>Date posted: 2016</h3>
 
         
-            <form name = "memberForm" action = "memberform2.html" onsubmit = "" method = "post" id="memberForm" autocomplete="on">  
+          <form name = "memberForm" action = "memberform2.html" onsubmit = "" method = "post" id="memberForm" autocomplete="on">  
 
                 <h3>Membership Options</h3>
                 <fieldset class = "Membership Options">
@@ -182,18 +182,16 @@ $(document).ready(function(){
                 </ul>
                 </fieldset>    
                 <h3>Player Registration</h3><br>
-                <label for = "instrument">Instrument/s Played:</label>
-                <input type = "text" name = "instrument" id="instrument" placeholder="Guitar" onfocusout="" required>
-                <label for = "qualification">Qualifications:</label>
-                <input type = "text" name = "qualification" id="qualification" placeholder="State qualifications..." onfocusout="" required>
-                <label for = "experience">Experience:</label>
-                <input type = "text" name = "experience" id="experience" placeholder="State experience..." onfocusout="" required>
+                <label for = "instrument">Instrument/s Played: </label><img src="images/cross.png" alt="X" name="instrumentTick" width="12" height="12" id="instrumentTick"><span id="instrumentErrMsg"></span>
+                <input type = "text" name = "instrument" id="instrument" placeholder="Guitar" onfocusout="instrumentEntered(this);" required>
+                <label for = "qualification">Qualifications: </label><img src="images/cross.png" alt="X" name="qualificationTick" width="12" height="12" id="qualificationTick"><span id="qualificationErrMsg">
+                <input type = "text" name = "qualification" id="qualification" placeholder="State qualifications..." onfocusout="qualificationEntered(this);" required>
+                <label for = "experience">Experience: </label><img src="images/cross.png" alt="X" name="experienceTick" width="12" height="12" id="experienceTick"><span id="experienceErrMsg">
+                <input type = "text" name = "experience" id="experience" placeholder="State experience..." onfocusout="experiencedEntered(this);" required>
 
-                <input type="reset" value="reset" id="reset">
-                <input type ="submit" value="continue" id="submit">
-
+                <input type = "reset" value = "reset" onreset="clearForm();">
+                <input type = "submit" value = "submit" id="submit" >
             </form>
-
             
         
     </div>
