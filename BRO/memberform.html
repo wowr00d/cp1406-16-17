@@ -1,7 +1,7 @@
 
 <html>
 <head>
-<title>Membership Form - Barrier Reef Orchestra</title>
+<title>Becoming a Member - Barrier Reef Orchestra</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Cinzel|Lora' rel='stylesheet' type='text/css'>
 <link href='gallery.css' rel="stylesheet" type="text/css">
@@ -70,13 +70,13 @@ $(document).ready(function(){
         
         <div id="spotlight-inner">
             <h1>Becoming a Member</h1>
-            <h2>Secondary CTA text can go here fellas</h2>
+            <h2>...The opportunities are limitless...</h2>
         </div>
     </div>
     
     <div id="content-wrapper">
         <div id="left-column">
-            <h1>Form<h1><hr>
+            <h1>Member Form<h1><hr>
 
             <h2></h2><h3>Date posted: 2016</h3>
 
@@ -137,14 +137,12 @@ $(document).ready(function(){
                 <input type="text" name="kidname" id="kidname3" placeholder="Child 3" onfocusout="" required><input type="date" name="kidDate" id="kidDate3" onfocusout=""="" required>
                 <!--add an option to extend number of kids-->
                 <br>
-                <label for = "Address">Address*: <img src="images/cross.png" alt="X" name="addressTick" width="12" height="12" id="addressTick"><span id="addressErrMsg"></span></label>
-                <input type = "text" name = "Address" id="Address" placeholder="Mailing Address" onfocusout="addressEntered(this);" required>
-                                
+                                            
                 <label for = "Phone">Phone: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"></span></label>
                 <input type = "text" name = "Phone" id = "Phone" maxlength="10" placeholder="0412345678" onfocusout="phoneEntered(this);" required>
                 
-                <label for = "Mobile"> Mobile: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"></span></label>
-                <input type = "text" name = "Mobile" id = "Mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);" required>
+                <label for = "mobile"> Mobile: <img src="images/cross.png" alt="X" name="mobileTick" width="12" height="12" id="mobileTick"><span id="phoneErrMsg"></span></label>
+                <input type = "text" name = "mobile" id = "mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);" required>
 
                  <label for = "Email">Email Address: <img src="images/cross.png" alt="X" name="emailTick" width="12" height="12" id="emailTick"> <span id="emailErrMsg"></span></label> 
                 <input type = "text" name = "Email" id = "Email" placeholder="Example@gmail.com" onfocusout="emailEntered(this);" required>
@@ -189,11 +187,10 @@ $(document).ready(function(){
                 <label for = "experience">Experience:</label>
                 <input type = "text" name = "experience" id="experience" placeholder="State experience..." onfocusout="" required>
 
-                <input type="reset" value="reset" id="reset">
-                <input type ="submit" value="continue" id="submit">
-
             </form>
 
+            <button onclick='validate()'>Submit</button>
+            <button onclick='reset()'>Reset</button>
             
         
     </div>

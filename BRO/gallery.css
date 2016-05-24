@@ -217,27 +217,6 @@ nav {
   display: inline;
   outline: none;
 }
-#left-column input[type=submit] {
-  width: auto;
-  display: inline;
-  float: right;
-  margin: 1em;
-  outline: none;
-}
-#left-column input[type=button] {
-  width: auto;
-  display: inline;
-  float: right;
-  margin: 1em;
-  outline: none;
-}
-#left-column input[type=reset] {
-  width: auto;
-  display: inline;
-  float: right;
-  margin:1em;
-  outline: none;
-}
 #phoneErrMsg{
   font-family: 'Open Sans', sans-serif;
   color: black;
@@ -248,16 +227,25 @@ nav {
   color: black;
   font-size: 0.8em;
 }
-#addressErrMsg{
-  font-family: 'Open Sans', sans-serif;
-  color: black;
-  font-size: 0.8em;
-}
 #nameErrMsg{
   font-family: 'Open Sans', sans-serif;
   color: black;
   font-size: 0.8em;
   display:inline;
+}
+#mobileErrMsg{
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 0.8em;
+  display:inline;
+}
+
+#left-column input[type=button] {
+  width: auto;
+  display: inline;
+  float: right;
+  margin: 1em;
+  outline: none;
 }
 
 #left-column input {
