@@ -222,6 +222,11 @@ nav {
   color: black;
   font-size: 0.8em;
 }
+#emailErrMsg{
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 0.8em;
+}
 #DonationMsg{
   font-family: 'Open Sans', sans-serif;
   color: black;
@@ -239,7 +244,12 @@ nav {
   font-size: 0.8em;
   display:inline;
 }
-
+#typeValidationErrMsg{
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 0.8em;
+  display:inline;
+}
 #left-column input[type=button] {
   width: auto;
   display: inline;
@@ -268,7 +278,8 @@ nav {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
  }
 
-fieldset{
+fieldset.paymentType{
+    width: 375px;
     margin:0;
     padding:0;
 }

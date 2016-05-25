@@ -4,13 +4,11 @@ function nameEntered(name) {
         document.BenefactorForm.nameTick.src = "images/tick.png";
         document.BenefactorForm.nameTick.alt = "tick";
         document.getElementById("nameErrMsg").innerHTML = "Perfect";
-        namex = true;
          
     }
     else {
         document.BenefactorForm.nameTick.src = "images/cross.png";
         document.BenefactorForm.nameTick.alt = "cross";
-        namex = false;
         return;
     }
 }
@@ -19,36 +17,29 @@ function donationEntered(Donation) {
     var inpObj = document.getElementById("Donation");
     if (Donation.value == "" ||  Donation.value == null){
         document.getElementById("DonationMsg").innerHTML = "Please enter your donation amount"
-        donationx = false;
         return;
     }
     else if (inpObj.checkValidity() == false) {
         document.getElementById("DonationMsg").innerHTML = inpObj.validationMessage;
-        donationx = false;
         return;
     } else {
         document.getElementById("DonationMsg").innerHTML = "Valid Donation";
-        donationx = true;
         return;
     } 
 } 
 
 function emailEntered(Email) {
-    var x = document.forms["BenefactorForm"]["Email"].value;
-    var atpos = x.indexOf("@");
-    var dotpos = x.lastIndexOf(".");
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        document.BenefactorForm.emailTick.src = "images/cross.png";
-        document.BenefactorForm.emailTick.alt = "cross";
-        document.getElementById("emailErrMsg") = "Not a valid e-mail address"
-        emailx = false;
-        return;
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+    if(Email.value.match(mailformat)){
+      document.BenefactorForm.emailTick.src = "images/tick.png";
+      document.BenefactorForm.emailTick.alt = "tick";
+      document.getElementById("emailErrMsg").innerHTML = "Perfect"  
+      return;
     }
     else{
-        document.BenefactorForm.emailTick.src = "images/tick.png";
-        document.BenefactorForm.emailTick.alt = "tick";
-        document.getElementById("emailErrMsg") = "Perfect"
-        emailx = true;
+      document.BenefactorForm.emailTick.src = "images/cross.png";
+      document.BenefactorForm.emailTick.alt = "cross";
+      document.getElementById("emailErrMsg").innerHTML = "Not a valid e-mail address"
          
     }
 }
@@ -59,35 +50,30 @@ function phoneEntered(Phone) {
       document.BenefactorForm.phoneTick.src = "images/tick.png";
       document.BenefactorForm.phoneTick.alt = "tick";
       document.getElementById("phoneErrMsg").innerHTML = "Perfect";
-      phonex= true;
        
   }  
   else{  
       document.BenefactorForm.phoneTick.src = "images/cross.png";
       document.BenefactorForm.phoneTick.alt = "cross";
-      document.getElementById("phoneErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters";
-     phonex= false;  
+      document.getElementById("phoneErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters"; 
      return;
   }  
 } 
 
 function mobileEntered(mobile) {  
   var mobileno = /^\d{10}$/;
-  if(Mobile.value.match(phoneno)){  
+  if(mobile.value.match(mobileno)){  
       document.BenefactorForm.mobileTick.src = "images/tick.png";
       document.BenefactorForm.mobileTick.alt = "tick";
-      document.getElementById("mobileErrMsg").innerHTML = "Perfect";
-      mobilex= true;
-       
+      document.getElementById("mobileErrMsg").innerHTML = "Perfect";       
   }  
   else{  
       document.BenefactorForm.mobileTick.src = "images/cross.png";
       document.BenefactorForm.mobileTick.alt = "cross";
       document.getElementById("mobileErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters";
-     mobilex= false;  
      return;
   }  
-}   
+}  
 
 
 function anon(anonymous) {
@@ -108,25 +94,7 @@ function validate(){
   if(isNaN(BenefactorForm.Donation.value)){
     return
   }
-  if(BenefactorForm.Email.value=''){
-    return
-  }
-  if(BenefactorForm.Phone.value=''){
-    return
-  }
-  if(isNaN(BenefactorForm.Phone.value)){
-    return
-  }
-  if(BenefactorForm.Phone.length!= 10){
-    return
-  }
-   if(BenefactorForm.mobile.value=''){
-    return
-  }
-  if(isNaN(BenefactorForm.mobile.value)){
-    return
-  }
-  if(BenefactorForm.mobile.length!=10){
+  if(BenefactorForm.Cash.checked == false && BenefactorForm.Eftpos.checked == false && BenefactorForm.Cheque.checked == false){
     return
   }
   BenefactorForm.submit()
@@ -134,5 +102,11 @@ function validate(){
 
 function reset(){
   BenefactorForm.reset()
+  document.getElementById("nameErrMsg").innerHTML = "";
+  document.getElementById("DonationMsg").innerHTML = "";
+  document.getElementById("emailErrMsg").innerHTML = "";
+  document.getElementById("phoneErrMsg").innerHTML = "";
+  document.getElementById("mobileErrMsg").innerHTML = ""; 
+  document.getElementById("recognition").disabled = false; 
 }
 

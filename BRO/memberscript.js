@@ -20,19 +20,17 @@ function nameEntered(name) {
 
 
 function emailEntered(Email) {
-    var x = document.forms["memberForm"]["Email"].value;
-    var atpos = x.indexOf("@");
-    var dotpos = x.lastIndexOf(".");
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        document.memberForm.emailTick.src = "images/cross.png";
-        document.memberForm.emailTick.alt = "cross";
-        document.getElementById("emailErrMsg") = "Not a valid e-mail address"
-         return;
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+    if(Email.value.match(mailformat)){
+      document.memberForm.emailTick.src = "images/tick.png";
+      document.memberForm.emailTick.alt = "tick";
+      document.getElementById("emailErrMsg").innerHTML = "Perfect"  
+      return;
     }
     else{
-        document.memberForm.emailTick.src = "images/tick.png";
-        document.memberForm.emailTick.alt = "tick";
-        document.getElementById("emailErrMsg") = "Perfect"
+      document.memberForm.emailTick.src = "images/cross.png";
+      document.memberForm.emailTick.alt = "cross";
+      document.getElementById("emailErrMsg").innerHTML = "Not a valid e-mail address"
          
     }
 }
@@ -48,28 +46,42 @@ function phoneEntered(Phone) {
   else{  
       document.memberForm.phoneTick.src = "images/cross.png";
       document.memberForm.phoneTick.alt = "cross";
-      document.getElementById("phoneErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters";
-      return;
+      document.getElementById("phoneErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters"; 
+     return;
   }  
 } 
 
 function mobileEntered(mobile) {  
   var mobileno = /^\d{10}$/;
-  if(Mobile.value.match(phoneno)){  
+  if(mobile.value.match(mobileno)){  
       document.memberForm.mobileTick.src = "images/tick.png";
       document.memberForm.mobileTick.alt = "tick";
-      document.getElementById("mobileErrMsg").innerHTML = "Perfect";
-       
+      document.getElementById("mobileErrMsg").innerHTML = "Perfect";       
   }  
   else{  
       document.memberForm.mobileTick.src = "images/cross.png";
       document.memberForm.mobileTick.alt = "cross";
       document.getElementById("mobileErrMsg").innerHTML = "Please enter only 10 digits without spacing or other special characters";
-      return;
-}   
-
+     return;
   }  
-
+}     
+function concessionEntered(typeValidation){
+  if(isNaN(typeValidation.value)){
+    document.memberForm.typeValidation.src = "images/cross.png";
+    document.memberForm.typeValidation.alt = "cross";
+    document.getElementById("typeValidationErrMsg").innerHTML = "Please enter only digits";
+  }
+  else if(typeValidation.value ==''){
+    document.memberForm.typeValidation.src = "images/cross.png";
+    document.memberForm.typeValidation.alt = "cross";
+    document.getElementById("typeValidationErrMsg").innerHTML = "Please enter only digits";
+  }
+  else{
+    document.memberForm.typeValidation.src = "images/tick.png";
+    document.memberForm.typeValidation.alt = "tick";
+    document.getElementById("typeValidationErrMsg").innerHTML = " Perfect";
+  }
+}
 
 function anon(anonymous) {
   document.getElementById("recognition").disabled = true;
@@ -110,40 +122,10 @@ function validate(){
   if(memberForm.name.value == ''){
             return
         }
-  if(memberForm.Donation.value ==''){
+  if(memberForm.Renewal.checked == false && memberForm.New.checked == false){
     return
   }
-  if(isNaN(memberForm.Donation.value)){
-    return
-  }
-  if(memberForm.Email.value=''){
-    return
-  }
-  if(memberForm.Phone.value=''){
-    return
-  }
-  if(isNaN(memberForm.Phone.value)){
-    return
-  }
-  if(memberForm.Phone.length!= 10){
-    return
-  }
-   if(memberForm.mobile.value=''){
-    return
-  }
-  if(isNaN(memberForm.mobile.value)){
-    return
-  }
-  if(memberForm.mobile.length!=10){
-    return
-  }
-  if(memberForm.instrument.value=''){
-    return
-  }
-  if(memberForm.qualification.value=''){
-    return
-  }
-  if(memberForm.experience.value=''){
+  if(memberForm.cash.checked == false && memberForm.cheque.checked ==false && memberForm.debit.checked ==false){
     return
   }
   memberForm.submit()
@@ -152,5 +134,10 @@ function validate(){
 
 function reset(){
   memberForm.reset()
+  document.getElementById("nameErrMsg").innerHTML = "";
+  document.getElementById("DonationMsg").innerHTML = "";
+  document.getElementById("emailErrMsg").innerHTML = "";
+  document.getElementById("phoneErrMsg").innerHTML = "";
+  document.getElementById("mobileErrMsg").innerHTML = ""; 
 }
 

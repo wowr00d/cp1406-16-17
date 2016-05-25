@@ -85,12 +85,15 @@ $(document).ready(function(){
                 <label for = "Donation">I wish to become a Barrier Reef Orchestra Benefactor and contribute*:</label>
                 <input type = "number" min = "100" max = "99999999" name = "Donation" id = "Donation" placeholder="$" onfocusout="donationEntered(this);" required><p id = "DonationMsg"></p>
 
+                <fieldset class = "paymentType">
+                <legend>Select Payment Type</legend>
                 <label for = "Cheque">Cheque*:</label>
                 <input type="radio" name="payment" value="Cheque">
                 <label for = "Eftpos">Eftpos:</label>
                 <input type="radio" name="payment" value="Eftpos">
                 <label for = "Cash">Cash:</label>
                 <input type="radio" name="payment" value="Cash">
+                </fieldset>
                 
                 <br>
 
@@ -101,19 +104,19 @@ $(document).ready(function(){
                
                 <br>
 
-                <label for = "name">Name*: <img src="images/cross.png" alt="X" name="nameTick" width="12" height="12" id="nameTick"><span id = "nameErrMsg"></span></label>
+                <label for = "name">Name*: <img src="images/cross.png" alt="X" name="nameTick" width="12" height="12" id="nameTick"><span id = "nameErrMsg"> </span></label>
                 <input type="text" name="name" id="name" placeholder="Name" autofocus onKeyUp="nameEntered(this);" required>
 
                 <br>
 
-                <label for = "Email">Email Address: <img src="images/cross.png" alt="X" name="emailTick" width="12" height="12" id="emailTick"> <span id="emailErrMsg"></span></label> 
-                <input type = "text" name = "Email" id = "Email" placeholder="Example@gmail.com" onfocusout="emailEntered(this);" required>
+                <label for = "Email">Email Address: <img src="images/cross.png" alt="X" name="emailTick" width="12" height="12" id="emailTick"><span id="emailErrMsg"> </span></label> 
+                <input type = "text" name = "Email" id = "Email" placeholder="Example@gmail.com" onfocusout="emailEntered(this);">
                 
-                <label for = "Phone">Phone: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"></span></label>
-                <input type = "text" name = "Phone" id = "Phone" maxlength="10" placeholder="0412345678" onfocusout="phoneEntered(this);" required>
+                <label for = "Phone">Phone: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"> </span></label>
+                <input type = "text" name = "Phone" id = "Phone" maxlength="10" placeholder="0412345678" onfocusout="phoneEntered(this);">
                 
-                <label for = "mobile"> Mobile: <img src="images/cross.png" alt="X" name="mobileTick" width="12" height="12" id="mobileTick"><span id="mobileErrMsg"></span></label>
-                <input type = "text" name = "mobile" id = "mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);" required>
+                <label for = "mobile"> Mobile: <img src="images/cross.png" alt="X" name="mobileTick" width="12" height="12" id="mobileTick"><span id="mobileErrMsg"> </span></label>
+                <input type = "text" name = "mobile" id = "mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);">
 
                 <br>
 

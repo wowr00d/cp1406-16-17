@@ -81,7 +81,7 @@ $(document).ready(function(){
             <h2></h2><h3>Date posted: 2016</h3>
 
         
-            <form name = "memberForm" action = "memberform2.html" onsubmit = "" method = "post" id="memberForm" autocomplete="on">  
+            <form name = "memberForm" action = "" onsubmit = "" method = "post" id="memberForm" autocomplete="on">  
 
                 <h3>Membership Options</h3>
                 <fieldset class = "Membership Options">
@@ -110,8 +110,8 @@ $(document).ready(function(){
 
                 <br>
 
-                <label for="typeValidation">Student/concession number: <img src="images/cross.png" alt="X" name="typeValidation" width="12" height="12" id="typeValidation"><span id = "typeValidationErrMsg"></span></label>
-                <input type="text" name="type" id="type" placeholder="107098" onfocusout="" required>
+                <label for="typeValidation">Student/concession number: <img src="images/cross.png" alt="X" name="typeValidation" width="12" height="12" id="typeValidation"><span id = "typeValidationErrMsg"> </span></label>
+                <input type="text" name="type" id="type" placeholder="107098" onfocusout="concessionEntered(this);" required>
             
                 <br>
 
@@ -128,7 +128,7 @@ $(document).ready(function(){
                 </select>
                 <br>
                 
-                <label for = "name">Name (First and Last)*: <img src="images/cross.png" alt="X" name="nameTick" width="12" height="12" id="nameTick"><span id = "nameErrMsg"></span></label>
+                <label for = "name">Name (First and Last)*: <img src="images/cross.png" alt="X" name="nameTick" width="12" height="12" id="nameTick"><span id = "nameErrMsg"> </span></label>
                 <input type="text" name="name" id="name" placeholder="Name" onfocusout="nameEntered(this);" required>
 
                 <label for = "children">Children of family membership:</label>
@@ -138,14 +138,14 @@ $(document).ready(function(){
                 <!--add an option to extend number of kids-->
                 <br>
                                             
-                <label for = "Phone">Phone: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"></span></label>
-                <input type = "text" name = "Phone" id = "Phone" maxlength="10" placeholder="0412345678" onfocusout="phoneEntered(this);" required>
+                <label for = "Phone">Phone: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"> </span></label>
+                <input type = "text" name = "Phone" id = "Phone" maxlength="10" placeholder="0412345678" onfocusout="phoneEntered(this);">
                 
-                <label for = "mobile"> Mobile: <img src="images/cross.png" alt="X" name="mobileTick" width="12" height="12" id="mobileTick"><span id="phoneErrMsg"></span></label>
-                <input type = "text" name = "mobile" id = "mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);" required>
+                <label for = "mobile"> Mobile: <img src="images/cross.png" alt="X" name="mobileTick" width="12" height="12" id="mobileTick"><span id="mobileErrMsg"> </span></label>
+                <input type = "text" name = "mobile" id = "mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);">
 
-                 <label for = "Email">Email Address: <img src="images/cross.png" alt="X" name="emailTick" width="12" height="12" id="emailTick"> <span id="emailErrMsg"></span></label> 
-                <input type = "text" name = "Email" id = "Email" placeholder="Example@gmail.com" onfocusout="emailEntered(this);" required>
+                 <label for = "Email">Email Address: <img src="images/cross.png" alt="X" name="emailTick" width="12" height="12" id="emailTick"><span id="emailErrMsg"> </span></label> 
+                <input type = "text" name = "Email" id = "Email" placeholder="Example@gmail.com" onfocusout="emailEntered(this);">
                 <br>
                 <h3>Payment</h3>
                 <fieldset class = "Membership Options">
@@ -181,11 +181,11 @@ $(document).ready(function(){
                 </fieldset>    
                 <h3>Player Registration</h3><br>
                 <label for = "instrument">Instrument/s Played:</label>
-                <input type = "text" name = "instrument" id="instrument" placeholder="Guitar" onfocusout="" required>
+                <input type = "text" name = "instrument" id="instrument" placeholder="Guitar" onfocusout="" >
                 <label for = "qualification">Qualifications:</label>
-                <input type = "text" name = "qualification" id="qualification" placeholder="State qualifications..." onfocusout="" required>
+                <input type = "text" name = "qualification" id="qualification" placeholder="State qualifications..." onfocusout="" >
                 <label for = "experience">Experience:</label>
-                <input type = "text" name = "experience" id="experience" placeholder="State experience..." onfocusout="" required>
+                <input type = "text" name = "experience" id="experience" placeholder="State experience..." onfocusout="" >
 
             </form>
 
