@@ -83,30 +83,44 @@ function concessionEntered(typeValidation){
   }
 }
 
-function anon(anonymous) {
-  document.getElementById("recognition").disabled = true;
-  recognition.value = null;
-}
-function anonUnDisable(anonymous) {
-  document.getElementById("recognition").disabled = false;
-}
 
 function familyTicket(){
-  document.getElementById("type").disabled =true;
+   if(memberForm.Family.checked==true){
+    document.getElementById("kidname1").disabled =false;
+    document.getElementById("kidname2").disabled =false;
+    document.getElementById("kidname3").disabled =false;
+    document.getElementById("kidDate1").disabled=false;
+    document.getElementById("kidDate2").disabled=false;
+    document.getElementById("kidDate3").disabled=false;
+    document.getElementById("kidname1").innerHTML ="";
+    document.getElementById("kidname2").innerHTML ="";
+    document.getElementById("kidname3").innerHTML ="";
+    document.getElementById("kidDate1").innerHTML="";
+    document.getElementById("kidDate2").innerHTML="";
+    document.getElementById("kidDate3").innerHTML="";
+    document.getElementById("type").disabled =true;
+  }
 }
 function notfamily(){
-  document.getElementById("kidname1").disabled =true;
-  document.getElementById("kidname2").disabled =true;
-  document.getElementById("kidname3").disabled =true;
-  document.getElementById("kidDate1").disabled=true;
-  document.getElementById("kidDate2").disabled=true;
-  document.getElementById("kidDate3").disabled=true;
-  document.getElementById("kidname1").innerHTML ="";
-  document.getElementById("kidname2").innerHTML ="";
-  document.getElementById("kidname3").innerHTML ="";
-  document.getElementById("kidDate1").innerHTML="";
-  document.getElementById("kidDate2").innerHTML="";
-  document.getElementById("kidDate3").innerHTML="";
+  if(memberForm.Adult.checked==true || memberForm.Student.checked==true || memberForm.Concession.checked ==true){
+    document.getElementById("kidname1").disabled =true;
+    document.getElementById("kidname2").disabled =true;
+    document.getElementById("kidname3").disabled =true;
+    document.getElementById("kidDate1").disabled=true;
+    document.getElementById("kidDate2").disabled=true;
+    document.getElementById("kidDate3").disabled=true;
+    document.getElementById("kidname1").innerHTML ="";
+    document.getElementById("kidname2").innerHTML ="";
+    document.getElementById("kidname3").innerHTML ="";
+    document.getElementById("kidDate1").innerHTML="";
+    document.getElementById("kidDate2").innerHTML="";
+    document.getElementById("kidDate3").innerHTML="";
+    document.getElementById("type").disabled =false;
+    return
+  }
+  else if(memberForm.Concession.checked==true){
+    document.getElementById("type").disabled=false
+  }
 }
 function disablePlayReg(){
   document.getElementById("instrument").disabled=true;
