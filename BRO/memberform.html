@@ -82,16 +82,16 @@ $(document).ready(function(){
             <h2></h2><h3>Date posted: 2016</h3>
 
         
-            <form name = "memberForm" action = "" onsubmit = "" method = "post" id="memberForm" autocomplete="on">  
+            <form name = "memberForm" action = "processMember.php"  method = "get" id="memberForm" autocomplete="on">  
 
                 <h3>Membership Options</h3>
                 <fieldset class = "Membership Options">
                 <legend> Select membership option</legend>
                 <ul class =memberTypeRadio>
                 <li><label for = "Renewal">Renewal Membership:</label>
-                <input type="radio" name="Renewal" value="Renewal"></li>
+                <input type="radio" name="MembershipType" value="Renewal" id="Renewal"></li>
                 <li><label for = "New">New Membership:</label>
-                <input type="radio" name="New" value="New"></li>
+                <input type="radio" name="MembershipType" value="New" id="New"></li>
                 </ul>
                 </fieldset>            
 
@@ -99,20 +99,20 @@ $(document).ready(function(){
                 <legend> Select membership type</legend>
                 <ul class =memberTypeRadio>
                 <li><label for = "Adult">Adult $30 -</label>
-                <input type="radio" name="Adult" value="Adult" onclick="notfamily()"></li>
+                <input type="radio" name="memberType" value="Adult" onclick="notfamily()" id="Adult"></li>
                 <li><label for = "Family">Family $60 -</label>
-                <input type="radio" name="Family" value="Family" onclick="familyTicket()"></li>
+                <input type="radio" name="memberType" value="Family" onclick="familyTicket()" id="Family"></li>
                 <li><label for = "Student">Student $15 -</label>
-                <input type="radio" name="Student" value="Student" onclick="notfamily()"></li>
+                <input type="radio" name="memberType" value="Student" onclick="notfamily()" id="Student"></li>
                 <li><label for = "Concession">Concession $15 -</label>
-                <input type="radio" name="Concession" value="Concession" onclick="notfamily()"></li>
+                <input type="radio" name="memberType" value="Concession" onclick="notfamily()" id="Conession"></li>
                 </ul>
                 </fieldset>
 
                 <br>
 
                 <label for="typeValidation">Student/concession number: <img src="images/cross.png" alt="X" name="typeValidation" width="12" height="12" id="typeValidation"><span id = "typeValidationErrMsg"> </span></label>
-                <input type="text" name="type" id="type" placeholder="107098" onfocusout="concessionEntered(this);" required>
+                <input type="text" name="type" id="type" placeholder="107098" onfocusout="concessionEntered(this);" >
             
                 <br>
 
@@ -133,9 +133,9 @@ $(document).ready(function(){
                 <input type="text" name="name" id="name" placeholder="Name" onfocusout="nameEntered(this);" required>
 
                 <label for = "children">Children of family membership:</label>
-                <input type="text" name="kidname" id="kidname1" placeholder="Child 1" onfocusout="" required><input type="date" name="kidDate" id="kidDate1" onfocusout=""="" required>
-                <input type="text" name="kidname" id="kidname2" placeholder="Child 2" onfocusout="" required><input type="date" name="kidDate" id="kidDate2" onfocusout=""="" required>
-                <input type="text" name="kidname" id="kidname3" placeholder="Child 3" onfocusout="" required><input type="date" name="kidDate" id="kidDate3" onfocusout=""="" required>
+                <input type="text" name="kidname" id="kidname1" placeholder="Child 1" onfocusout="" required><input type="date" name="kidDate" id="kidDate1" onfocusout=""="" >
+                <input type="text" name="kidname" id="kidname2" placeholder="Child 2" onfocusout="" required><input type="date" name="kidDate" id="kidDate2" onfocusout=""="" >
+                <input type="text" name="kidname" id="kidname3" placeholder="Child 3" onfocusout="" required><input type="date" name="kidDate" id="kidDate3" onfocusout=""="" >
                 <!--add an option to extend number of kids-->
                 <br>
                                             
@@ -153,11 +153,11 @@ $(document).ready(function(){
                 <legend> Select Payment Type</legend>
                 <ul class =memberTypeRadio>
                 <li><label for = "cash">Cash:</label>
-                <input type="radio" name="cash" value="cash"></li>
+                <input type="radio" name="cash" value="cash" id="cash"></li>
                 <li><label for = "cheque">Cheque:</label>
-                <input type="radio" name="cheque" value="cheque"></li>
+                <input type="radio" name="cheque" value="cheque" id="cheque"></li>
                 <li><label for = "debit">Direct Debit to: NQ Ensembles Inc.  BSB 034 222  Account: 17 3033 (Please include family name as payment reference):</label>
-                <input type="radio" name="debit" value="debit"></li>
+                <input type="radio" name="debit" value="debit" id="debit"></li>
                 </ul>
                 </fieldset>
                 <h3>How can you help the orchestra?</h3>
@@ -165,19 +165,19 @@ $(document).ready(function(){
                 <legend>I am interested in:</legend>
                 <ul id ="memberHelp">
                     <li><label for = "playing">Playing in the orchestra:</label>
-                    <input type="radio" name="playing" value="playing"></li>
+                    <input type="radio" name="help" value="playing" id="playing"></li>
                     <li><label for = "management">Management/administration:</label>
-                    <input type="radio" name="management" value="management" onclick="disablePlayReg()"></li>
+                    <input type="radio" name="help" value="management" onclick="disablePlayReg()" id="management"></li>
                     <li><label for = "playerSupport">Player support:</label>
-                    <input type="radio" name="playerSupport" value="playerSupport" onclick="disablePlayReg()"></li>
+                    <input type="radio" name="help" value="playerSupport" onclick="disablePlayReg()" id="playerSupport"></li>
                     <li><label for = "fundraising">fundraising:</label>
-                    <input type="radio" name="fundraising" value="fundraising" onclick="disablePlayReg()"></li>
+                    <input type="radio" name="help" value="fundraising" onclick="disablePlayReg()" id="fundraising"></li>
                     <li><label for = "marketing">Marketing/Promotion:</label>
-                    <input type="radio" name="marketing" value="marketing" onclick="disablePlayReg()"></li>
+                    <input type="radio" name="help" value="marketing" onclick="disablePlayReg()" id="marketing"></li>
                     <li><label for = "sponsorship">Sponsorship:</label>
-                    <input type="radio" name="sponsorship" value="sponsorship" onclick="disablePlayReg()"></li>
+                    <input type="radio" name="help" value="sponsorship" onclick="disablePlayReg()" id="sponsorship"></li>
                     <li><label for = "publishing">Desktop publishing:</label>
-                    <input type="radio" name="publishing" value="publishing" onclick="disablePlayReg()"></li>
+                    <input type="radio" name="help" value="publishing" onclick="disablePlayReg()" id="publishing"></li>
                 </ul>
                 </fieldset>    
                 <h3>Player Registration</h3><br>

@@ -133,6 +133,7 @@ function disablePlayReg(){
 }
 
 function validate(){
+  var BenefactorForm = document.getElementById('BenefactorForm');
   if(memberForm.name.value == ''){
             return
         }
@@ -147,7 +148,7 @@ function validate(){
 
 
 function reset(){
-  memberForm.reset()
+  document.getElementById('BenefactorForm').reset()
   document.getElementById("nameErrMsg").innerHTML = "";
   document.getElementById("DonationMsg").innerHTML = "";
   document.getElementById("emailErrMsg").innerHTML = "";
