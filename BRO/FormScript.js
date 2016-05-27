@@ -91,35 +91,35 @@ function validate(){
     var MobileCheck = document.getElementById('mobile');
     var MobileLength = MobileCheck.toString('MobileCheck');
     if(BenefactorForm.name.value == ""){
-        alert('name');
+        alert('Please Enter Your Name');
         return;
     }
     else if(BenefactorForm.Donation.value ==""){
-      alert('donation');
+      alert('Please Enter a Donation Amount');
       return;
     }
     else if(isNaN(BenefactorForm.Donation.value)){
-      alert('donation');
+      alert('Please Enter a Numerical Donation');
       return;
     }
     else if(PhoneCheck.value != "" && isNaN(PhoneCheck.value)){ //doesnt validate for 0 digits, since its not a required field. only validates if there is somethign in there incorrect.
-      alert('phone nan');
+      alert('Please enter only digits in your phone number');
       return
     }
     else if(PhoneLength.length >= 1 && PhoneLength.length < 10){
-      alert('phone not right size');
+      alert('Make Sure Your Phone is Ten Digits');
       return
     }
     else if(MobileCheck.value != "" && isNaN(MobileCheck.value)){ //doesnt validate for 0 digits, since its not a required field. only validates if there is somethign in there incorrect.
-      alert('mobile nan');
+      alert('Please enter only digits in your mobile number.');
       return
     }
     else if(MobileLength.length >= 1 && MobileLength.length < 10){
-      alert('mobile not right size');
+      alert('Make Sure Your Mobile is Ten Digits');
       return
     }
     else if(BenefactorForm.cash.checked == false && BenefactorForm.eftpos.checked == false && BenefactorForm.cheque.checked == false){
-      alert('payment');
+      alert('Please Select a Payment Type');
       return;
     }
     else{
