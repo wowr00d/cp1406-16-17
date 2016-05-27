@@ -85,23 +85,30 @@ function anonUnDisable(anonymous) {
 }
 
 function validate(){
-  if(BenefactorForm.name.value == ''){
-            return
-        }
-  if(BenefactorForm.Donation.value ==''){
-    return
-  }
-  if(isNaN(BenefactorForm.Donation.value)){
-    return
-  }
-  if(BenefactorForm.Cash.checked == false && BenefactorForm.Eftpos.checked == false && BenefactorForm.Cheque.checked == false){
-    return
-  }
-  BenefactorForm.submit()
+    var BenefactorForm = document.getElementById('BenefactorForm');
+    if(BenefactorForm.name.value == ""){
+        alert('name');
+        return;
+    }
+    else if(BenefactorForm.Donation.value ==""){
+      alert('donation');
+      return;
+    }
+    else if(isNaN(BenefactorForm.Donation.value)){
+      alert('donation');
+      return;
+    }
+    else if(BenefactorForm.cash.checked == false && BenefactorForm.eftpos.checked == false && BenefactorForm.cheque.checked == false){
+      alert('payment');
+      return;
+    }
+    else{
+        BenefactorForm.submit();
+    }
 }
 
 function reset(){
-  BenefactorForm.reset()
+  document.getElementById('BenefactorForm').reset()
   document.getElementById("nameErrMsg").innerHTML = "";
   document.getElementById("DonationMsg").innerHTML = "";
   document.getElementById("emailErrMsg").innerHTML = "";

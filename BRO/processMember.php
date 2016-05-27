@@ -1,4 +1,3 @@
-
 <html>
 <head>
 <title>Becoming a Benefactor - Barrier Reef Orchestra</title>
@@ -70,65 +69,37 @@ $(document).ready(function(){
         </nav>
         
         <div id="spotlight-inner">
-            <h1>Becoming a Benefactor</h1>
+            <h1>Sucessful Donation</h1>
             <h2>...All Donations Are Taken With Generosity...</h2>
         </div>
     </div>
     
     <div id="content-wrapper">
         <div id="left-column">
-            <h1>Benefactor Form<h1><hr>
+            <h1>Details Summary<h1><hr>
 
             <h2></h2><h3>Date posted: 2016</h3>
 
-        
-            <form name = "BenefactorForm" action = "process.php" method = "get" id="BenefactorForm">              
-                <label for = "Donation">I wish to become a Barrier Reef Orchestra Benefactor and contribute*:</label>
-                <input type = "number" min = "100" max = "99999999" name = "Donation" id = "Donation" placeholder="$" onfocusout="donationEntered(this);" required><p id = "DonationMsg"></p>
+			<?php
+                $name = $_GET["name"];
+                $renewalorNot = $_GET["MembershipType"];
+                $email = $_GET["Email"];
+                $phone = $_GET["Phone"];
+                $mobile = $_GET["mobile"];
+                $help = $_GET["help"];
+                $type = $_GET["memberType"];
 
-                <fieldset class = "paymentType">
-                <legend>Select Payment Type</legend>
-                <label for = "Cheque">Cheque*:</label>
-                <input type="radio" name="payment" value="Cheque" id=cheque>
-                <label for = "Eftpos">Eftpos:</label>
-                <input type="radio" name="payment" value="Eftpos" id='eftpos'>
-                <label for = "Cash">Cash:</label>
-                <input type="radio" name="payment" value="Cash" id="cash">
-                </fieldset>
-                
-                <br>
+                print "Thank you " . $name . " your application will be processed shortly and we will get back to you as soon as possible. <br> The following is a summary of your details provided: <br><br>";
+                print "Membership - ". $renewalorNot .".<br>";
+                print "Membership type - ". $type. ".<br>";
+                print "You have chosen to apply to ".$help. " within the orchestra.<br>";
+                print "Email Address - ". $email . ".<br>";
+                print "Phone Number - ". $phone .".<br>";
+                print "Mobile Number - ". $mobile . ".<br>";
 
-                <label>Please place me/us on the benefactor roll as:</label>
-                <input type="text" name="recognition" id="recognition" placeholder="anything you like">
-                <label>Or remain anonymous: yes -</label>
-                <input type="radio" name="anonymous" value="anonymous" id="anonymous"  onClick="anon(this);">
-               
-                <br>
+            ?>
 
-                <label for = "name">Name*: <img src="images/cross.png" alt="X" name="nameTick" width="12" height="12" id="nameTick"><span id = "nameErrMsg"> </span></label>
-                <input type="text" name="name" id="name" placeholder="Name" autofocus onKeyUp="nameEntered(this);" required>
-
-                <br>
-
-                <label for = "Email">Email Address: <img src="images/cross.png" alt="X" name="emailTick" width="12" height="12" id="emailTick"><span id="emailErrMsg"> </span></label> 
-                <input type = "text" name = "Email" id = "Email" placeholder="Example@gmail.com" onfocusout="emailEntered(this);">
-                
-                <label for = "Phone">Phone: <img src="images/cross.png" alt="X" name="phoneTick" width="12" height="12" id="phoneTick"><span id="phoneErrMsg"> </span></label>
-                <input type = "text" name = "Phone" id = "Phone" maxlength="10" placeholder="0412345678" onfocusout="phoneEntered(this);">
-                
-                <label for = "mobile"> Mobile: <img src="images/cross.png" alt="X" name="mobileTick" width="12" height="12" id="mobileTick"><span id="mobileErrMsg"> </span></label>
-                <input type = "text" name = "mobile" id = "mobile" maxlength="10" placeholder="0412345678" onfocusout="mobileEntered(this);">
-
-                <br>
-
-                <a href="benefactorform/north-queensland-orchestra-benefactor-form.pdf" target="_blank">Hard Copy</a>
-                                  
-
-            </form>
-
-            <button onclick='validate()'>Submit</button>
-            <button onclick='reset()'>Reset</button>
-            
+            <a href="index.html"><button>Return To Home</button></a>                   
         
     </div>
         <div id="facebook-feed">
