@@ -135,7 +135,6 @@ nav {
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    display: inline;
 }
 #content-wrapper {
     width: 1024px;
@@ -144,6 +143,17 @@ nav {
     padding-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+.trigger {
+    width: 95%;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: #c6c6c6;
+}
+.dropdown {
+    width: 95%;
+    padding: 8px;
+    background-color: #efefef;
 }
 #left-column {
     width: 630px;
@@ -178,11 +188,17 @@ nav {
     font-size: 12px;
     display: inline;
 }
+#left-column h4{
+    font-family: 'Lora', serif;
+    color: black;
+    font-size: 16px;
+}
 #left-column p{
     font-family: 'Lora', sans-serif;
     color: black;
     margin: 0px;
     font-size: 15px;
+    font-weight: 400;
     padding-bottom: 25px;
     padding-top: 8px;
 }
@@ -218,12 +234,28 @@ nav {
   display: inline;
   outline: none;
 }
-#phoneErrMsg{
-  font-family: 'Open Sans', sans-serif;
-  color: black;
-  font-size: 0.8em;
+#left-column input[type=submit] {
+  width: auto;
+  display: inline;
+  float: right;
+  margin: 1em;
+  outline: none;
 }
-#emailErrMsg{
+#left-column input[type=button] {
+  width: auto;
+  display: inline;
+  float: right;
+  margin: 1em;
+  outline: none;
+}
+#left-column input[type=reset] {
+  width: auto;
+  display: inline;
+  float: right;
+  margin:1em;
+  outline: none;
+}
+#phoneErrMsg{
   font-family: 'Open Sans', sans-serif;
   color: black;
   font-size: 0.8em;
@@ -233,30 +265,16 @@ nav {
   color: black;
   font-size: 0.8em;
 }
+#addressErrMsg{
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 0.8em;
+}
 #nameErrMsg{
   font-family: 'Open Sans', sans-serif;
   color: black;
   font-size: 0.8em;
   display:inline;
-}
-#mobileErrMsg{
-  font-family: 'Open Sans', sans-serif;
-  color: black;
-  font-size: 0.8em;
-  display:inline;
-}
-#typeValidationErrMsg{
-  font-family: 'Open Sans', sans-serif;
-  color: black;
-  font-size: 0.8em;
-  display:inline;
-}
-#left-column input[type=button] {
-  width: auto;
-  display: inline;
-  float: right;
-  margin: 1em;
-  outline: none;
 }
 
 #left-column input {
@@ -279,8 +297,7 @@ nav {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
  }
 
-fieldset.paymentType{
-    width: 375px;
+fieldset{
     margin:0;
     padding:0;
 }
@@ -384,7 +401,7 @@ input:valid{
     #spotlight-inner h2 {
         font-size: 20px;
     }
-    #nav-inner a {
+    .m-hide {
         display: none;
     }
     #left-column {
@@ -400,8 +417,8 @@ input:valid{
     #content-wrapper {
         width: 100%;
     }
-    #footer-inner {
-        width: 90%;
+    #footer {
+        display: none;
     }
 }
 

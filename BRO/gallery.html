@@ -19,49 +19,43 @@ $(document).ready(function(){
         $("#mobile-menu").animate({left: '-100%'});
     });
     $('.popup-gallery').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-			titleSrc: function(item) {
-				return item.el.attr('title');
-			}
-		}
-	});
+        delegate: 'a',
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'mfp-img-mobile',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            titleSrc: function(item) {
+                return item.el.attr('title');
+            }
+        }
+    });
 });
 </script>
     <div id="mobile-menu">
         <p>MENU</p><div id="mm-exit"></div>
         <hr>
-        <a class="logo" href="index.html"><img alt="LOGO" src="images/logo.png"></a>
         <a href="https://whatson.townsville.qld.gov.au/categories/ticketshop">Buy a ticket</a>
-        <a href="index.html">Home</a>
-        <a href="aboutus.html">About us</a>
         <a href="people.html">People</a>
+        <a href="aboutus.html">About Us</a>
         <a href="gallery.html">Gallery</a>
-        <a href="memberform.html">Join Us</a>
         <a href="form.html">Support Us</a>
     </div>
-    
     
     <div id="spotlight-frame">
         <nav>
             <div id="nav-inner">
                 <a class="logo" href="index.html"><img alt="LOGO" src="images/logo.png"></a>
-                <a href="https://whatson.townsville.qld.gov.au/categories/ticketshop">Buy a ticket</a>
-                <a href="index.html">Home</a>
-                <a href="aboutus.html">About us</a>
-                <a href="people.html">People</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="memberform.html">Join Us</a>
-                <a href="form.html">Support Us</a>
+                <a class="m-hide" href="https://whatson.townsville.qld.gov.au/categories/ticketshop">Buy a ticket</a>
+                <a class="m-hide" href="people.html">People</a>
+                <a class="m-hide" href="aboutus.html">About Us</a>
+                <a class="m-hide" href="gallery.html">Gallery</a>
+                <a class="m-hide" href="form.html">Support Us</a>
                 
                 <div id="mm-button"></div>
             </div>
@@ -75,12 +69,13 @@ $(document).ready(function(){
     <div id="content-wrapper">
         <div id="left-column">
             <h1>Gallery<h1><hr>
+            <p>We've got a lot going on all the time here at the Barrier Reef Orchestra, here's some pictures entailing some of the things we get up to.</p>
     <div class="popup-gallery">
-	    <a href="Gallery Images/_DSC8185Chrissy%20Maguire%202014.jpg"><img src="Gallery Images/_DSC8185Chrissy%20Maguire%202014(sml).jpg" ></a>
-	    <a href="Gallery Images/ACFMRAR.jpg"><img src="Gallery Images/ACFMRAR(sml).jpg"></a>
-    	<a href="Gallery Images/AFCMpark1.jpg"><img src="Gallery Images/AFCMpark1(sml).jpg"></a>
-    	<a href="Gallery Images/AmyandBRO.jpg"><img src="Gallery Images/AmyandBRO(sml).jpg"></a>
-	    <a href="Gallery Images/andrewconducting.jpg"><img src="Gallery Images/andrewconducting(sml).jpg"></a>
+        <a href="Gallery Images/_DSC8185Chrissy%20Maguire%202014.jpg"><img src="Gallery Images/_DSC8185Chrissy%20Maguire%202014(sml).jpg" ></a>
+        <a href="Gallery Images/ACFMRAR.jpg"><img src="Gallery Images/ACFMRAR(sml).jpg"></a>
+        <a href="Gallery Images/AFCMpark1.jpg"><img src="Gallery Images/AFCMpark1(sml).jpg"></a>
+        <a href="Gallery Images/AmyandBRO.jpg"><img src="Gallery Images/AmyandBRO(sml).jpg"></a>
+        <a href="Gallery Images/andrewconducting.jpg"><img src="Gallery Images/andrewconducting(sml).jpg"></a>
         <a href="Gallery Images/andrewinaction.jpg"><img src="Gallery Images/andrewinaction(sml).jpg"></a>
         <a href="Gallery Images/Andrewwithdavid.jpg"><img src="Gallery Images/Andrewwithdavid(sml).jpg"</a>
         <a href="Gallery Images/BROsept14.jpg"><img src="Gallery Images/BROsept14(sml).jpg"></a>
@@ -106,9 +101,9 @@ $(document).ready(function(){
         <a href="Gallery Images/withDom.jpg"><img src="Gallery Images/withDom(sml).jpg"></a>
 
 
-</div>
-        
         </div>
+        
+    </div>
         
         <div id="facebook-feed">
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnqorchestra&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>

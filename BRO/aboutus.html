@@ -12,85 +12,68 @@
 <body>
 <script> 
 $(document).ready(function(){
+    $(".dropdown").slideUp();
+    
     $("#mm-button").click(function(){
         $("#mobile-menu").animate({left: '0px'});
     });
     $("#mm-exit").click(function(){
         $("#mobile-menu").animate({left: '-100%'});
     });
-    $('.popup-gallery').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        tLoading: 'Loading image #%curr%...',
-        mainClass: 'mfp-img-mobile',
-        gallery: {
-            enabled: true,
-            navigateByImgClick: true,
-            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-        },
-        image: {
-            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-            titleSrc: function(item) {
-                return item.el.attr('title');
-            }
-        }
-    });
+    
+    var $container = $('.drop-container'),
+    $trigger = $('.trigger');
+    $trigger.on('click',function(){
+    var $this = $(this).siblings('.dropdown');
+    $container.find('.dropdown').slideUp();
+    if($this.is(':visible')) {
+        $this.hide('fast');
+    }
+    else {
+        $this.slideDown();
+    }
+});
+    
 });
 </script>
     <div id="mobile-menu">
         <p>MENU</p><div id="mm-exit"></div>
         <hr>
-        <a class="logo" href="index.html"><img alt="LOGO" src="images/logo.png"></a>
         <a href="https://whatson.townsville.qld.gov.au/categories/ticketshop">Buy a ticket</a>
-        <a href="index.html">Home</a>
-        <a href="aboutus.html">About us</a>
         <a href="people.html">People</a>
+        <a href="aboutus.html">About Us</a>
         <a href="gallery.html">Gallery</a>
-        <a href="memberform.html">Join Us</a>
         <a href="form.html">Support Us</a>
     </div>
-    
     
     <div id="spotlight-frame">
         <nav>
             <div id="nav-inner">
                 <a class="logo" href="index.html"><img alt="LOGO" src="images/logo.png"></a>
-                <a href="https://whatson.townsville.qld.gov.au/categories/ticketshop">Buy a ticket</a>
-                <a href="index.html">Home</a>
-                <a href="aboutus.html">About us</a>
-                <a href="people.html">People</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="memberform.html">Join Us</a>
-                <a href="form.html">Support Us</a>
+                <a class="m-hide" href="https://whatson.townsville.qld.gov.au/categories/ticketshop">Buy a ticket</a>
+                <a class="m-hide" href="people.html">People</a>
+                <a class="m-hide" href="aboutus.html">About Us</a>
+                <a class="m-hide" href="gallery.html">Gallery</a>
+                <a class="m-hide" href="form.html">Support Us</a>
                 
                 <div id="mm-button"></div>
             </div>
         </nav>
         
         <div id="spotlight-inner">
-          <h1>Barrier Reef Orchestra</h1>
-            <a href="#committee"><h2>Committee  </h2></a><a href="#history"><h2>History  </h2></a><a href="documents/BRO_Repertoire.pdf"><h2>Repetoire  </h2></a><a href="documents/nqei-rules-2010.pdf"><h2>Rules</h2></a>
+          <h1>About Us</h1>
         </div>
     </div>
     
     <div id="content-wrapper">
         <div id="left-column">
-            <h1>Barrier Reef Orchestra<hr>
-            <p>The <i>Barrier Reef Orchestra</i> is a product of North Queensland Ensembles Inc.     
-       <br /><br /><i>North Queensland Ensembles Inc.</i> is an Incorporated Association registered in the
-       State of Queensland. 
-       <br />It is also a tax deductible fund listed on the Register of Cultural Organisations under 
-       Subdivision 30-B of the Income tax Assessment Act 1997. 
-       It is based in Townsville, North Queensland, Australia.</p><br>
-
-            <h2>Committee<a name="committee"></a><br clear="left" /></h2>
-            <h3>Date posted: 2016</h3>
-          
-          
-
-  <hr class="HR" />
-<a name="committee"></a><br clear="left" />
-     <table class="JGNtable" style="text-align:left; margin-left:80px;font-weight:normal; font-size:12pt; color:black;">
+            <h1>Barrier Reef Orchestra</h1><hr>
+            <p>All the essential information you'll ever need to know about the Barrier Reef Orchestra. Simply click on the heading you would wish to learn more about to expand the full detailed information.</p>
+            
+    <div class="drop-container">
+    <div class="trigger"><h2>Committee</h2></div>
+    <div class="dropdown">
+     <table style="width:500px;text-align:left; margin-left:20px;font-weight:normal; font-size:12pt; color:black;">
        <tbody>
        <tr><td colspan="2" style="font-weight:bold; color:black"><b>North Queensland Ensembles Inc Management Committee 2015</b></td></tr>
        <tr><td>&nbsp</td><td></td></tr>
@@ -110,16 +93,14 @@ $(document).ready(function(){
        <tr><td></td><td></td></tr>
        <tr><td>Orchestra Manager:</td><td>Sally Frewen-Lord</td></tr>
        </tbody>       
-     </table><br>
-     <br>
+     </table>
+        
+    </div>
+    </div>
      
-            <h2>History</h2>
-            <h3>Date posted: 2016</h3>
-<hr class="HR" />
-<a name="history"></a>
-
-  
-       <p>Over a two-year period in the late nineties, Townsville musicians, arts workers and a group of people who had a love for music realised the potential for developing a community-based Orchestra - one that would flourish and become an integral part of the City's cultural life.<br>
+        <div class="drop-container">
+        <div class="trigger"><h2>History</h2></div>
+        <div class="dropdown"><p>Over a two-year period in the late nineties, Townsville musicians, arts workers and a group of people who had a love for music realised the potential for developing a community-based Orchestra - one that would flourish and become an integral part of the City's cultural life.<br>
        <br>In 2000 to 'test' the viability of establishing an Orchestra a weekend workshop was arranged and musicians were invited to participate under the baton of Richard McIntyre, Senior Lecturer at the Canberra School of Music and the result - the Barrier Reef Orchestra was born.<br>
        <br>During the past few years, the Orchestra has performed with the comedy-duo Scared Weird Little Guys in Score, Townsville City Council's Last Night of the Proms and A Christmas Carol. In 2003 the Council's centenary year the Orchestra took part in Encore, as well as playing a major role in the Townsville Civic Theatre's 25th Anniversary productions of Noye's Fludde and Carmina Burana.<br>
        <br>In a typical year the Barrier Reef Orchestra, under the auspices of North Queensland Ensembles Inc, performs three times generally with a guest conductor and occasionally with other performing groups. Smaller ensembles, all utilising players from the Orchestra, regularly give concerts - Orpheus Strings, Pandanus Winds, Kingfisher Trio, Centenary Concert Band and the Barrier Reef Chamber Orchestra. In 2004, the Orchestra presented its first subscription series of three concerts receiving sponsorship from Queensland Nickel - Yabulu.<br>
@@ -191,26 +172,33 @@ $(document).ready(function(){
      <br>As I am now retiring as President this is my last report.  Over the last five years it has been gratifying to see the Barrier Reef Orchestra make considerable progress.   In 2009 the orchestra was in the doldrums.  It was drawing an audience of 150 or less, had less than $10,000 in cash reserves and performed as an orchestra of about 40 players.  In fact the mid year concert in 2009 was cancelled because we simply could not muster the players required for the concert program.   We are now drawing a audience of 300 to 400 if not more, have cash reserves around $70,000 and field an orchestra of 60 to 70 players, depending on the program.   We have also had a paid manager for several years and our current manager Sally Frewen-Lord has achieved organisational wonders.  This transformation has occurred only because of the great effort that has been put in over years by managers, members both playing and non-playing, by committee members and by sponsors, supporters and philanthropists, so it is very much a team effort.
      <br /><br />I am confident that this enthusiasm and support will continue under Andrew Ryder's presidency and the orchestra will retain and enhance its position as one of the leading organizations in Townsville's arts community.
      
-     <br>
-     </p>
-     <hr class="HR" />
-      <span style="text-align:left; font-weight:normal; font-size:10pt; color:black">
-        <b><a href="memberform.html">Become a Member or Player</a></b>
+     <br></p>
+            </div>
+            </div>
+    
+    <div class="drop-container">
+    <div class="trigger"><h2>Other Infomation</h2></div>
+    <div class="dropdown">
+    <span>
+        <b><a href="BRO/memberform.html">Become a Member or Player</a></b>
         <br>Interested in becoming a member of, or a player in, the Orchestra?<br>
      
-     <br><b><a href="form.html">Sponsor or Donate to the Orchestra</a></b>
+     <br><b><a href="BRO/documents/benefactorform/north-queensland-orchestra-benefactor-form.pdf">Sponsor or Donate to the Orchestra</a></b>
      <br>The North Queensland Ensembles Inc is a tax deductible fund listed on the Register of Cultural Organisations under Subdivision 30-B of the Income tax Assessment Act 1997. Donations of $2.00 or more are tax deductible.
      <br>Help us continue to provide quality entertainment for the Townsville community by supporting the orchestra.<br>
-     <br><b><a href="documents/BRO_Repertoire.pdf">Barrier Reef Orchestra Repertoire</a></b><br>
-     <br><b><a href="documents/nqei-rules-2010.pdf">North Queensland Ensembles Inc. Rules of Association</a></b><br>as adopted 11 March 2010
+     <br><b><a href="BRO/Repertoire.pdf">Barrier Reef Orchestra Repertoire</a></b><br>
+     <br><b><a href="BRO/documents/nqei-rules-2010.pdf">North Queensland Ensembles Inc. Rules of Association</a></b><br>as adopted 11 March 2010
             <br />ABN: 73-365-249-138
             <br>
      </span>
-   </div> 
-        <div id="facebook-feed">
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnqorchestra&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
         </div>
+            </div>
     </div>
+                <div id="facebook-feed">
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnqorchestra&tabs=timeline&width=340&height=690&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="690" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        </div>
+</div>
+
             
     <div id="footer">
         <div id="footer-inner">
