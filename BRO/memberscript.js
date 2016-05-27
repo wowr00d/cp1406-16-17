@@ -170,9 +170,16 @@ function validate(){
 function reset(){
   document.getElementById('BenefactorForm').reset()
   document.getElementById("nameErrMsg").innerHTML = "";
-  document.getElementById("DonationMsg").innerHTML = "";
   document.getElementById("emailErrMsg").innerHTML = "";
   document.getElementById("phoneErrMsg").innerHTML = "";
   document.getElementById("mobileErrMsg").innerHTML = ""; 
+    document.BenefactorForm.nameTick.src = "images/cross.png";
+  document.BenefactorForm.nameTick.alt = "cross";
+  document.BenefactorForm.emailTick.src = "images/cross.png";
+  document.BenefactorForm.emailTick.alt = "cross";
+  document.BenefactorForm.phoneTick.src = "images/cross.png";
+  document.BenefactorForm.phoneTick.alt = "cross";
+  document.BenefactorForm.mobileTick.src = "images/cross.png";
+  document.BenefactorForm.mobileTick.alt = "cross";
 }
 
