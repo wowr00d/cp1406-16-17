@@ -134,13 +134,33 @@ function disablePlayReg(){
 
 function validate(){
   var BenefactorForm = document.getElementById('BenefactorForm');
+  var PhoneCheck = document.getElementById('Phone');
+  var PhoneLength = PhoneCheck.toString('PhoneCheck');
+  var MobileCheck = document.getElementById('mobile');
+  var MobileLength = MobileCheck.toString('MobileCheck');
   if(memberForm.name.value == ''){
-            return
-        }
-  if(memberForm.Renewal.checked == false && memberForm.New.checked == false){
     return
   }
-  if(memberForm.cash.checked == false && memberForm.cheque.checked ==false && memberForm.debit.checked ==false){
+  else if(memberForm.Renewal.checked == false && memberForm.New.checked == false){
+    return
+  }
+  else if(memberForm.cash.checked == false && memberForm.cheque.checked ==false && memberForm.debit.checked ==false){
+    return
+  }
+  else if(PhoneCheck.value != "" && isNaN(PhoneCheck.value)){ //doesnt validate for 0 digits, since its not a required field. only validates if there is somethign in there incorrect.
+      alert('phone nan');
+      return
+    }
+  else if(PhoneLength.length >= 1 && PhoneLength.length < 10){
+    alert('phone not right size');
+    return
+  }
+  else if(MobileCheck.value != "" && isNaN(MobileCheck.value)){ //doesnt validate for 0 digits, since its not a required field. only validates if there is somethign in there incorrect.
+    alert('mobile nan');
+    return
+  }
+  else if(MobileLength.length >= 1 && MobileLength.length < 10){
+    alert('mobile not right size');
     return
   }
   memberForm.submit()
